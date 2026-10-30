@@ -30,7 +30,7 @@ Este repositório reúne a evolução prática dos meus estudos de Programação
 ## Diagrama UML
 Abaixo encontra-se o Diagrama de Classes estruturado no Astah, representando as classes, atributos, métodos, heranças e contratos de interface implementados no projeto:
 
-![Class Diagram](docs/Class%20diagram.png)
+![Class Diagram](docs/class-diagram.png)
 
 ---
 
