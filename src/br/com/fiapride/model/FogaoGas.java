@@ -1,30 +1,30 @@
 package br.com.fiapride.model;
 
-public class FogaoGas extends Fogao {
-	private String tipoGas;
-	public FogaoGas(Proprietario proprietario, String tamanho, int quantidadeBocas) {
-		super(proprietario,tamanho,quantidadeBocas);	
-	}
-	//definição do setter de tipoGas
-	public void setTipoGas (String tipoGas) {
-			this.tipoGas=tipoGas;
-		}
-		
-	//definição do getter de potenciaMaxima
-	public String getTipoGas() {
-			return tipoGas;
-		}
-		
-	
-	//Função adaptada à classe FogaoInducao
-	@Override
-	public void prepararParaUso() {
-	    System.out.println("Fogão a gás: verificando o fornecimento de gás.");
-	}
-	
-	//sobrescrevendo a classe abstrata de Fogao
-	@Override
-	public void tipoEnergia() {
-		System.out.println("Esse fogão é abastecido tanto por GLP (gás liquefeito de petróleo) como por GN (gás natural). Por favor, alimente-o a uma dessas opções ");
-		}
+// O Fogão a Gás implementa o forno
+public class FogaoGas extends Fogao implements FuncaoForno {
+    private String tipoGas;
+    
+    public FogaoGas(Proprietario proprietario, String tamanho, int quantidadeBocas, String tipoGas) {
+        super(proprietario, tamanho, quantidadeBocas);    
+        this.tipoGas = tipoGas;
+    }
+
+    public void setTipoGas(String tipoGas) { this.tipoGas = tipoGas; }
+    public String getTipoGas() { return tipoGas; }
+        
+    @Override
+    public void prepararParaUso() {
+        System.out.println("Fogão a gás: abrindo o registro de gás e verificando vazamentos.");
+    }
+    
+    @Override
+    public void tipoEnergia() {
+        System.out.println("Abastecido por gás (" + tipoGas + ").");
+    }
+
+    // Contrato da Interface FuncaoForno
+    @Override
+    public void assar(String alimento) {
+        System.out.println("Assando " + alimento + " no forno do fogão a gás.");
+    }
 }
